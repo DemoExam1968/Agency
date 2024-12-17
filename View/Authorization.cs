@@ -56,10 +56,6 @@ namespace Agency
             //Получить логин и пароль от пользователя
             string login = this.textBoxLogin.Text;
             string password = this.textBoxPassword.Text;
-            //Получить всех пользователей из БД
-            //List<Model.User> users = new List<Model.User>();
-            //users = Helper.DB.User.ToList();
-            //MessageBox.Show("кол-во пользователей: " + users.Count);
 
             List<Model.User> users = Helper.DB.User.ToList();
             //Получить список отфильтрованных пользователей по логину и паролю
