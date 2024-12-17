@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище NSAgencyContainer" CdmEntityContainer="DBAgency">
+    <EntitySetMapping Name="Agent">
+      <EntityTypeMapping TypeName="NSAgency.Agent">
+        <MappingFragment StoreEntitySet="Agent">
+          <ScalarProperty Name="AgentId" ColumnName="AgentId" />
+          <ScalarProperty Name="AgentFullName" ColumnName="AgentFullName" />
+          <ScalarProperty Name="AgentTelephon" ColumnName="AgentTelephon" />
+          <ScalarProperty Name="AgentEmail" ColumnName="AgentEmail" />
+          <ScalarProperty Name="AgentPercent" ColumnName="AgentPercent" />
+          <ScalarProperty Name="AgentCountTrade" ColumnName="AgentCountTrade" />
+          <ScalarProperty Name="AgentStatusId" ColumnName="AgentStatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Client">
+      <EntityTypeMapping TypeName="NSAgency.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="ClientFullName" ColumnName="ClientFullName" />
+          <ScalarProperty Name="ClientTelephon" ColumnName="ClientTelephon" />
+          <ScalarProperty Name="ClientEmail" ColumnName="ClientEmail" />
+          <ScalarProperty Name="ClientPassport" ColumnName="ClientPassport" />
+          <ScalarProperty Name="ClientAdress" ColumnName="ClientAdress" />
+          <ScalarProperty Name="ClientBirthday" ColumnName="ClientBirthday" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Flat">
+      <EntityTypeMapping TypeName="NSAgency.Flat">
+        <MappingFragment StoreEntitySet="Flat">
+          <ScalarProperty Name="FlatId" ColumnName="FlatId" />
+          <ScalarProperty Name="FlatClientId" ColumnName="FlatClientId" />
+          <ScalarProperty Name="FlatSquare" ColumnName="FlatSquare" />
+          <ScalarProperty Name="FlatCost" ColumnName="FlatCost" />
+          <ScalarProperty Name="FlatAdrees" ColumnName="FlatAdrees" />
+          <ScalarProperty Name="FlatFloor" ColumnName="FlatFloor" />
+          <ScalarProperty Name="FlatRooms" ColumnName="FlatRooms" />
+          <ScalarProperty Name="FlatBalcony" ColumnName="FlatBalcony" />
+          <ScalarProperty Name="FlatRegionId" ColumnName="FlatRegionId" />
+          <ScalarProperty Name="FlatStatusId" ColumnName="FlatStatusId" />
+          <ScalarProperty Name="FlatCondition" ColumnName="FlatCondition" />
+          <ScalarProperty Name="FlatDescription" ColumnName="FlatDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Region">
+      <EntityTypeMapping TypeName="NSAgency.Region">
+        <MappingFragment StoreEntitySet="Region">
+          <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+          <ScalarProperty Name="RegionName" ColumnName="RegionName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Request">
+      <EntityTypeMapping TypeName="NSAgency.Request">
+        <MappingFragment StoreEntitySet="Request">
+          <ScalarProperty Name="RequestId" ColumnName="RequestId" />
+          <ScalarProperty Name="RequestClientId" ColumnName="RequestClientId" />
+          <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+          <ScalarProperty Name="RequestAgentId" ColumnName="RequestAgentId" />
+          <ScalarProperty Name="RequestMinCost" ColumnName="RequestMinCost" />
+          <ScalarProperty Name="RequestMaxCost" ColumnName="RequestMaxCost" />
+          <ScalarProperty Name="RequestRooms" ColumnName="RequestRooms" />
+          <ScalarProperty Name="RequestRegionId" ColumnName="RequestRegionId" />
+          <ScalarProperty Name="RequestStatusId" ColumnName="RequestStatusId" />
+          <ScalarProperty Name="RequestDescription" ColumnName="RequestDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Role">
+      <EntityTypeMapping TypeName="NSAgency.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatusAgent">
+      <EntityTypeMapping TypeName="NSAgency.StatusAgent">
+        <MappingFragment StoreEntitySet="StatusAgent">
+          <ScalarProperty Name="StatusAgentId" ColumnName="StatusAgentId" />
+          <ScalarProperty Name="StatusAgentName" ColumnName="StatusAgentName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatusFlat">
+      <EntityTypeMapping TypeName="NSAgency.StatusFlat">
+        <MappingFragment StoreEntitySet="StatusFlat">
+          <ScalarProperty Name="StatusFlatId" ColumnName="StatusFlatId" />
+          <ScalarProperty Name="StatusFlatName" ColumnName="StatusFlatName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatusRequest">
+      <EntityTypeMapping TypeName="NSAgency.StatusRequest">
+        <MappingFragment StoreEntitySet="StatusRequest">
+          <ScalarProperty Name="StatusRequestId" ColumnName="StatusRequestId" />
+          <ScalarProperty Name="StatusRequestName" ColumnName="StatusRequestName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatusTrade">
+      <EntityTypeMapping TypeName="NSAgency.StatusTrade">
+        <MappingFragment StoreEntitySet="StatusTrade">
+          <ScalarProperty Name="StatusTradeId" ColumnName="StatusTradeId" />
+          <ScalarProperty Name="StatusTradeName" ColumnName="StatusTradeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trade">
+      <EntityTypeMapping TypeName="NSAgency.Trade">
+        <MappingFragment StoreEntitySet="Trade">
+          <ScalarProperty Name="TradeId" ColumnName="TradeId" />
+          <ScalarProperty Name="TradeRequestId" ColumnName="TradeRequestId" />
+          <ScalarProperty Name="TradeFlatId" ColumnName="TradeFlatId" />
+          <ScalarProperty Name="TradeDate" ColumnName="TradeDate" />
+          <ScalarProperty Name="TradeStatusId" ColumnName="TradeStatusId" />
+          <ScalarProperty Name="TradeCost" ColumnName="TradeCost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="NSAgency.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserLogin" ColumnName="UserLogin" />
+          <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+          <ScalarProperty Name="UserRoleId" ColumnName="UserRoleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

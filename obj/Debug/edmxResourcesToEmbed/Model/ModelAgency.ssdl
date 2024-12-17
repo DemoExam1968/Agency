@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище NSAgency" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Agent">
+    <Key>
+      <PropertyRef Name="AgentId" />
+    </Key>
+    <Property Name="AgentId" Type="int" Nullable="false" />
+    <Property Name="AgentFullName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="AgentTelephon" Type="char" MaxLength="17" Nullable="false" />
+    <Property Name="AgentEmail" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="AgentPercent" Type="real" Nullable="false" />
+    <Property Name="AgentCountTrade" Type="int" Nullable="false" />
+    <Property Name="AgentStatusId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="ClientId" />
+    </Key>
+    <Property Name="ClientId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClientFullName" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ClientTelephon" Type="char" MaxLength="17" Nullable="false" />
+    <Property Name="ClientEmail" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ClientPassport" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="ClientAdress" Type="nvarchar" MaxLength="150" />
+    <Property Name="ClientBirthday" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Flat">
+    <Key>
+      <PropertyRef Name="FlatId" />
+    </Key>
+    <Property Name="FlatId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FlatClientId" Type="int" Nullable="false" />
+    <Property Name="FlatSquare" Type="real" Nullable="false" />
+    <Property Name="FlatCost" Type="real" Nullable="false" />
+    <Property Name="FlatAdrees" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="FlatFloor" Type="int" Nullable="false" />
+    <Property Name="FlatRooms" Type="int" Nullable="false" />
+    <Property Name="FlatBalcony" Type="bit" Nullable="false" />
+    <Property Name="FlatRegionId" Type="int" />
+    <Property Name="FlatStatusId" Type="int" />
+    <Property Name="FlatCondition" Type="nvarchar" MaxLength="500" />
+    <Property Name="FlatDescription" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Region">
+    <Key>
+      <PropertyRef Name="RegionId" />
+    </Key>
+    <Property Name="RegionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RegionName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Request">
+    <Key>
+      <PropertyRef Name="RequestId" />
+    </Key>
+    <Property Name="RequestId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RequestClientId" Type="int" Nullable="false" />
+    <Property Name="RequestDate" Type="date" Nullable="false" />
+    <Property Name="RequestAgentId" Type="int" Nullable="false" />
+    <Property Name="RequestMinCost" Type="real" Nullable="false" />
+    <Property Name="RequestMaxCost" Type="real" Nullable="false" />
+    <Property Name="RequestRooms" Type="int" Nullable="false" />
+    <Property Name="RequestRegionId" Type="int" Nullable="false" />
+    <Property Name="RequestStatusId" Type="int" Nullable="false" />
+    <Property Name="RequestDescription" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StatusAgent">
+    <Key>
+      <PropertyRef Name="StatusAgentId" />
+    </Key>
+    <Property Name="StatusAgentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StatusAgentName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StatusFlat">
+    <Key>
+      <PropertyRef Name="StatusFlatId" />
+    </Key>
+    <Property Name="StatusFlatId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StatusFlatName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StatusRequest">
+    <Key>
+      <PropertyRef Name="StatusRequestId" />
+    </Key>
+    <Property Name="StatusRequestId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StatusRequestName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StatusTrade">
+    <Key>
+      <PropertyRef Name="StatusTradeId" />
+    </Key>
+    <Property Name="StatusTradeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StatusTradeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Trade">
+    <Key>
+      <PropertyRef Name="TradeId" />
+    </Key>
+    <Property Name="TradeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TradeRequestId" Type="int" Nullable="false" />
+    <Property Name="TradeFlatId" Type="int" Nullable="false" />
+    <Property Name="TradeDate" Type="date" Nullable="false" />
+    <Property Name="TradeStatusId" Type="int" Nullable="false" />
+    <Property Name="TradeCost" Type="real" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserLogin" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UserPassword" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UserRoleId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Agent_StatusAgency">
+    <End Role="StatusAgent" Type="Self.StatusAgent" Multiplicity="1" />
+    <End Role="Agent" Type="Self.Agent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusAgent">
+        <PropertyRef Name="StatusAgentId" />
+      </Principal>
+      <Dependent Role="Agent">
+        <PropertyRef Name="AgentStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Agent_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Agent" Type="Self.Agent" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Agent">
+        <PropertyRef Name="AgentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Flat_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="Flat" Type="Self.Flat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ClientId" />
+      </Principal>
+      <Dependent Role="Flat">
+        <PropertyRef Name="FlatClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Flat_Region">
+    <End Role="Region" Type="Self.Region" Multiplicity="0..1" />
+    <End Role="Flat" Type="Self.Flat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Region">
+        <PropertyRef Name="RegionId" />
+      </Principal>
+      <Dependent Role="Flat">
+        <PropertyRef Name="FlatRegionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Flat_StatusFlat">
+    <End Role="StatusFlat" Type="Self.StatusFlat" Multiplicity="0..1" />
+    <End Role="Flat" Type="Self.Flat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusFlat">
+        <PropertyRef Name="StatusFlatId" />
+      </Principal>
+      <Dependent Role="Flat">
+        <PropertyRef Name="FlatStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Request_Agent">
+    <End Role="Agent" Type="Self.Agent" Multiplicity="1" />
+    <End Role="Request" Type="Self.Request" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Agent">
+        <PropertyRef Name="AgentId" />
+      </Principal>
+      <Dependent Role="Request">
+        <PropertyRef Name="RequestAgentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Request_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="Request" Type="Self.Request" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ClientId" />
+      </Principal>
+      <Dependent Role="Request">
+        <PropertyRef Name="RequestClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Request_Region">
+    <End Role="Region" Type="Self.Region" Multiplicity="1" />
+    <End Role="Request" Type="Self.Request" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Region">
+        <PropertyRef Name="RegionId" />
+      </Principal>
+      <Dependent Role="Request">
+        <PropertyRef Name="RequestRegionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Request_StatusRequest">
+    <End Role="StatusRequest" Type="Self.StatusRequest" Multiplicity="1" />
+    <End Role="Request" Type="Self.Request" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusRequest">
+        <PropertyRef Name="StatusRequestId" />
+      </Principal>
+      <Dependent Role="Request">
+        <PropertyRef Name="RequestStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Trade_Flat">
+    <End Role="Flat" Type="Self.Flat" Multiplicity="1" />
+    <End Role="Trade" Type="Self.Trade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Flat">
+        <PropertyRef Name="FlatId" />
+      </Principal>
+      <Dependent Role="Trade">
+        <PropertyRef Name="TradeFlatId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Trade_Request">
+    <End Role="Request" Type="Self.Request" Multiplicity="1" />
+    <End Role="Trade" Type="Self.Trade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Request">
+        <PropertyRef Name="RequestId" />
+      </Principal>
+      <Dependent Role="Trade">
+        <PropertyRef Name="TradeRequestId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Trade_StatusTrade">
+    <End Role="StatusTrade" Type="Self.StatusTrade" Multiplicity="1" />
+    <End Role="Trade" Type="Self.Trade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusTrade">
+        <PropertyRef Name="StatusTradeId" />
+      </Principal>
+      <Dependent Role="Trade">
+        <PropertyRef Name="TradeStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Role">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="UserRoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище NSAgencyContainer">
+    <EntitySet Name="Agent" EntityType="Self.Agent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Flat" EntityType="Self.Flat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Region" EntityType="Self.Region" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Request" EntityType="Self.Request" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StatusAgent" EntityType="Self.StatusAgent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StatusFlat" EntityType="Self.StatusFlat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StatusRequest" EntityType="Self.StatusRequest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StatusTrade" EntityType="Self.StatusTrade" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Trade" EntityType="Self.Trade" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Agent_StatusAgency" Association="Self.FK_Agent_StatusAgency">
+      <End Role="StatusAgent" EntitySet="StatusAgent" />
+      <End Role="Agent" EntitySet="Agent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Agent_User" Association="Self.FK_Agent_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Agent" EntitySet="Agent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Flat_Client" Association="Self.FK_Flat_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Flat" EntitySet="Flat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Flat_Region" Association="Self.FK_Flat_Region">
+      <End Role="Region" EntitySet="Region" />
+      <End Role="Flat" EntitySet="Flat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Flat_StatusFlat" Association="Self.FK_Flat_StatusFlat">
+      <End Role="StatusFlat" EntitySet="StatusFlat" />
+      <End Role="Flat" EntitySet="Flat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Request_Agent" Association="Self.FK_Request_Agent">
+      <End Role="Agent" EntitySet="Agent" />
+      <End Role="Request" EntitySet="Request" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Request_Client" Association="Self.FK_Request_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Request" EntitySet="Request" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Request_Region" Association="Self.FK_Request_Region">
+      <End Role="Region" EntitySet="Region" />
+      <End Role="Request" EntitySet="Request" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Request_StatusRequest" Association="Self.FK_Request_StatusRequest">
+      <End Role="StatusRequest" EntitySet="StatusRequest" />
+      <End Role="Request" EntitySet="Request" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Trade_Flat" Association="Self.FK_Trade_Flat">
+      <End Role="Flat" EntitySet="Flat" />
+      <End Role="Trade" EntitySet="Trade" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Trade_Request" Association="Self.FK_Trade_Request">
+      <End Role="Request" EntitySet="Request" />
+      <End Role="Trade" EntitySet="Trade" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Trade_StatusTrade" Association="Self.FK_Trade_StatusTrade">
+      <End Role="StatusTrade" EntitySet="StatusTrade" />
+      <End Role="Trade" EntitySet="Trade" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

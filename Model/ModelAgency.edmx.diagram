@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cb2badf1e7634a01828d5cdb8131e8a6" Name="Diagram1" ZoomLevel="132">
+        <EntityTypeShape EntityType="NSAgency.Agent" Width="1.5" PointX="4.25" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NSAgency.Client" Width="1.5" PointX="0.875" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NSAgency.Flat" Width="1.5" PointX="6.875" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NSAgency.Region" Width="1.5" PointX="7" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NSAgency.Request" Width="1.5" PointX="9.625" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NSAgency.Role" Width="1.5" PointX="9.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NSAgency.StatusAgent" Width="1.5" PointX="1.875" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NSAgency.StatusFlat" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NSAgency.StatusRequest" Width="1.5" PointX="3.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NSAgency.StatusTrade" Width="1.5" PointX="14.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NSAgency.Trade" Width="1.5" PointX="12.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NSAgency.User" Width="1.5" PointX="7" PointY="9.75" IsExpanded="true" />
+        <AssociationConnector Association="NSAgency.FK_Agent_StatusAgency" ManuallyRouted="false" />
+        <AssociationConnector Association="NSAgency.FK_Agent_User" ManuallyRouted="false" />
+        <AssociationConnector Association="NSAgency.FK_Request_Agent" ManuallyRouted="false" />
+        <AssociationConnector Association="NSAgency.FK_Flat_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="NSAgency.FK_Request_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="NSAgency.FK_Flat_Region" ManuallyRouted="false" />
+        <AssociationConnector Association="NSAgency.FK_Flat_StatusFlat" ManuallyRouted="false" />
+        <AssociationConnector Association="NSAgency.FK_Trade_Flat" ManuallyRouted="false" />
+        <AssociationConnector Association="NSAgency.FK_Request_Region" ManuallyRouted="false" />
+        <AssociationConnector Association="NSAgency.FK_Request_StatusRequest" ManuallyRouted="false" />
+        <AssociationConnector Association="NSAgency.FK_Trade_Request" ManuallyRouted="false" />
+        <AssociationConnector Association="NSAgency.FK_User_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="NSAgency.FK_Trade_StatusTrade" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
